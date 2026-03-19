@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report - Navigate to the Project Details page. Verify the user can navigate between screens and can do any scenario an unauthenticated user can do.</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; padding: 40px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; }
+        .header h1 { font-size: 28px; margin-bottom: 16px; }
+        .header-meta { display: flex; gap: 32px; flex-wrap: wrap; font-size: 14px; opacity: 0.95; }
+        .header-meta-item { display: flex; align-items: center; gap: 8px; }
+        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 32px; background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
+        .summary-card { background: white; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb; }
+        .summary-label { font-size: 12px; text-transform: uppercase; color: #6b7280; font-weight: 600; letter-spacing: 0.05em; }
+        .summary-value { font-size: 32px; font-weight: 700; margin-top: 8px; }
+        .summary-value.success { color: #10b981; }
+        .summary-value.error { color: #ef4444; }
+        .content { padding: 32px; }
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; }
+        .step { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; margin-bottom: 16px; border-left: 4px solid #d1d5db; }
+        .step.passed { border-left-color: #10b981; }
+        .step.failed { border-left-color: #ef4444; background: #fef2f2; }
+        .step-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .step-title { font-size: 16px; font-weight: 600; color: #111827; }
+        .step-status { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+        .step-status.passed { background: #d1fae5; color: #065f46; }
+        .step-status.failed { background: #fee2e2; color: #991b1b; }
+        .step-details { display: grid; gap: 12px; margin-top: 12px; }
+        .step-detail { font-size: 13px; }
+        .step-detail strong { color: #6b7280; font-weight: 600; display: block; margin-bottom: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .step-detail code { background: #f3f4f6; padding: 4px 8px; border-radius: 4px; font-family: 'Monaco', monospace; font-size: 12px; display: inline-block; }
+        .step-detail.reasoning { background: rgba(139, 92, 246, 0.1); padding: 12px; border-radius: 6px; border-left: 3px solid #8b5cf6; }
+        .step-detail.error { background: #fee2e2; padding: 12px; border-radius: 6px; border-left: 3px solid #ef4444; color: #991b1b; }
+        .screenshot { max-width: 100%; height: auto; border-radius: 8px; margin-top: 12px; border: 1px solid #e5e7eb; }
+        .ai-analysis { background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%); border: 1px solid #c4b5fd; border-radius: 8px; padding: 24px; }
+        .ai-analysis h3 { color: #7c3aed; margin-bottom: 12px; font-size: 16px; }
+        .ai-analysis p { color: #4b5563; line-height: 1.8; }
+        .footer { background: #f9fafb; padding: 24px; text-align: center; color: #6b7280; font-size: 13px; border-top: 1px solid #e5e7eb; }
+        @media print { body { padding: 0; background: white; } .container { box-shadow: none; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Navigate to the Project Details page. Verify the user can navigate between screens and can do any scenario an unauthenticated user can do.</h1>
+            <div class="header-meta">
+                <div class="header-meta-item">📱 Google Pixel 5a 5G (12)</div>
+                <div class="header-meta-item">⏱️ 2m 4s</div>
+                <div class="header-meta-item">📅 3/19/2026, 1:27:24 PM</div>
+                <div class="header-meta-item">🆔 e9b73828</div>
+            </div>
+        </div>
+
+        <div class="summary">
+            <div class="summary-card">
+                <div class="summary-label">Status</div>
+                <div class="summary-value success">✓ Passed</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-label">Pass Rate</div>
+                <div class="summary-value">100.0%</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-label">Passed Steps</div>
+                <div class="summary-value success">11</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-label">Failed Steps</div>
+                <div class="summary-value error">0</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Test Steps</h2>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 1: Tap Explore Climatize</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            <div class="step-detail"><strong>Target Element</strong><code>Explore Climatize</code></div>
+                            
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>The 'Explore Climatize' button is the primary call to action on this landing/disclaimer screen. Tapping it should lead into the main application where projects can be viewed.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-1-1773923456003.png" alt="Step 1 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 2: Tap Later to Skip Sign-In</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            <div class="step-detail"><strong>Target Element</strong><code>Later</code></div>
+                            
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>To navigate to the project details as an unauthenticated user, I need to bypass the sign-in screen. Tapping 'Later' should allow me to explore the app without an account.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-2-1773923456016.png" alt="Step 2 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 3: Wait for Projects to Load</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            
+                            <div class="step-detail"><strong>Input Data</strong><code>3000</code></div>
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>A loading spinner is visible on the 'Explore Projects' screen. I need to wait for the projects to be fetched and displayed before I can select one to view its details.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-3-1773923456008.png" alt="Step 3 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 4: Tap Learn more</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            <div class="step-detail"><strong>Target Element</strong><code>Learn more</code></div>
+                            
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>Tapping 'Learn more' on a project card is the standard way to navigate to the Project Details page, which is the goal.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-4-1773923456011.png" alt="Step 4 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 5: Tap Financial Tab</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            <div class="step-detail"><strong>Target Element</strong><code>405,957</code></div>
+                            
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>The goal is to navigate to the Project Details page and verify navigation. I am currently on the Project Details page (About tab). Tapping the 'FINANCIAL' tab will verify that an unauthenticated user can navigate between different sections of the project details.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-5-1773923456014.png" alt="Step 5 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 6: Tap Discussion Tab</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            <div class="step-detail"><strong>Target Element</strong><code>DISCUSSION</code></div>
+                            
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>To verify that an unauthenticated user can navigate between different sections of the project details, I will tap on the 'DISCUSSION' tab. This follows the previous action of tapping the 'FINANCIAL' tab.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-6-1773923456015.png" alt="Step 6 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 7: Tap UPDATES Tab</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            <div class="step-detail"><strong>Target Element</strong><code>945,957</code></div>
+                            
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>To verify that an unauthenticated user can navigate between all sections of the project details, I will tap on the 'UPDATES' tab. This is the last tab in the project details navigation menu.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-7-1773923456021.png" alt="Step 7 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 8: Tap View Details</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            <div class="step-detail"><strong>Target Element</strong><code>View Details</code></div>
+                            
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>To further verify navigation as an unauthenticated user, I'll tap 'View Details' on one of the project updates to see if it leads to more detailed information about that specific update.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-8-1773923456023.png" alt="Step 8 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 9: Navigate Back to Project List</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            <div class="step-detail"><strong>Target Element</strong><code>Navigate up</code></div>
+                            
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>To verify navigation between screens, I will navigate back from the Project Details page to the main project listing. This follows previous actions of exploring the Project Details tabs.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-9-1773923456025.png" alt="Step 9 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 10: Tap Learn more</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            <div class="step-detail"><strong>Target Element</strong><code>Learn more</code></div>
+                            
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>To reach the Project Details page, I'll tap 'Learn more' on the featured project card. This will allow me to continue verifying navigation and unauthenticated user access as per the goal.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-10-1773923456029.png" alt="Step 10 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+                    <div class="step passed">
+                        <div class="step-header">
+                            <div class="step-title">Step 11: Project Details Navigation Verified</div>
+                            <div class="step-status passed">✓ Passed</div>
+                        </div>
+                        <div class="step-details">
+                            
+                            
+                            <div class="step-detail reasoning"><strong>🤖 AI Reasoning</strong><p>I have successfully navigated to the Project Details page, verified that an unauthenticated user can switch between the 'ABOUT', 'FINANCIAL', 'DISCUSSION', and 'UPDATES' tabs (in previous steps), navigated into sub-details, and returned back. This confirms all requirements of the goal.</p></div>
+                            
+                            <img src="https://picstro.getscandium.com/media/rova%2Fmobile%2F36f7edc2-cc86-42b7-b3de-65f3c059a479%2Fscreenshots%2F070f062f-9556-4dd3-bbc8-23fae9b73828-result-11-1773923456027.png" alt="Step 11 screenshot" class="screenshot">
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+        </div>
+
+        <div class="footer">
+            Generated on 3/19/2026, 1:32:30 PM | Test Execution ID: 070f062f-9556-4dd3-bbc8-23fae9b73828
+        </div>
+    </div>
+</body>
+</html>
